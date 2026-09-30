@@ -1,0 +1,1841 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Leo G. Calumba - Computer Technician and IT Support Specialist Portfolio">
+    <meta name="author" content="Leo G. Calumba">
+
+    <title>Leo G. Calumba | Computer Technician</title>
+ 
+    <style>
+        /* ==============================
+           RESET & GENERAL
+        ============================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --muted: #64748b;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #161516;
+        }
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(2, 6, 23, 0.88);
+             backdrop-filter: blur(12px);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+            background: radial-gradient(circle at 80% 20%, rgba(37,99,235,0.35), transparent 35%), linear-gradient(135deg, #020617, #0f172a 55%, #172554);
+            color: rgb(245, 243, 243);
+            display: flex;
+            align-items: center;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h4 {
+            color: #eceef0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 58px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #e4e8ec;
+        }
+
+        .hero-text h3 {
+            font-size: 24px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #dfe3ee;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #ebeef1;
+            color: #f1edf1;
+        }
+
+        .btn-outline:hover {
+            background: #0f0f0f;
+            color: #eaeaf1;
+        }
+
+        .hero-card {
+            background: rgba(35, 167, 127, 0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dce0e9, #a00ab4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+        }
+
+        .hero-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .hero-card p {
+            color: #cbd5e1;
+        }
+
+        /* ==============================
+           ABOUT
+        ============================== */
+
+        .about {
+            background: rgb(241, 242, 243);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .info {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .info strong {
+            display: block;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        /* ==============================
+           EXPERIENCE
+        ============================== */
+
+        .experience {
+            background: #f1f5f9;
+        }
+
+        .experience-card {
+            background: white;
+            border-left: 5px solid var(--primary);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+        }
+
+        .experience-card h3 {
+            font-size: 25px;
+            color: var(--secondary);
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: bold;
+            margin: 5px 0 15px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        .experience-card li {
+            margin-bottom: 8px;
+        }
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills {
+            background: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 30px 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            background: white;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: #93c5fd;
+        }
+
+        .skill-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ==============================
+           SERVICES
+        ============================== */
+
+        .services {
+            background: #f1f5f9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .service-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: #170ace;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* ==============================
+           WORKFLOW
+        ============================== */
+
+        .workflow {
+            background: #f1f5f9;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .workflow-step {
+            text-align: center;
+            background: #ffffff;
+            padding: 25px 15px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+
+        .workflow-step h3 {
+            color: var(--secondary);
+            font-size: 17px;
+        }
+
+        /* ==============================
+           STRENGTHS
+        ============================== */
+
+        .strengths {
+            background: white;
+        }
+
+        .strengths-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .strength {
+            padding: 18px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            font-weight: bold;
+        }
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .contact .section-title h2 {
+            color: #ffffff;
+        }
+
+        .contact .section-title p {
+            color: #94a3b8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            padding: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .contact-item .icon {
+            font-size: 25px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #cbd5e1;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #020617;
+            color: #0d0d0e;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* ==============================
+           BACK TO TOP
+        ============================== */
+
+        #topBtn {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: rgb(236, 231, 235);
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+        }
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .workflow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strengths-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text h3 {
+                font-size: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .skills-grid,
+            .services-grid,
+            .projects-grid,
+            .strengths-list,
+            .workflow-grid,
+            .info-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                max-width: 400px;
+                margin: auto;
+            }
+        }
+
+        /* ==============================
+           POLISH & ACCESSIBILITY
+        ============================== */
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus-visible::after {
+            width: 100%;
+        }
+
+        .btn:focus-visible,
+        .menu-btn:focus-visible,
+        #topBtn:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid rgba(56, 189, 248, 0.45);
+            outline-offset: 3px;
+        }
+
+        .experience-card,
+        .skill-card,
+        .service-card,
+        .project-card,
+        .info {
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .section-title h2 {
+            letter-spacing: -0.5px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<header>
+    <div class="container">
+        <nav>
+
+            <div class="logo">
+                Leo<span>Tech</span>
+            </div>
+
+            <div class="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h4>Hello, I'm</h4>
+
+                <h1>
+                    
+                    Leo G. <span>Calumba</span>
+                </h1>
+                <h3>
+                    Computer Technician & IT Support Specialist
+                </h3>
+
+                <p>
+                    I provide reliable technical support, computer
+                    troubleshooting, hardware maintenance, networking,
+                    system configuration, and IT solutions designed to
+                    keep technology running efficiently.
+                </p>
+
+                <div class="buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        Contact Me
+                    </a>
+
+                    <a href="#projects" class="btn btn-outline">
+                        View My Work
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="profile-icon">
+                    <img src="profile.png.png" alt="Leo G. Calumba - Computer Technician">
+                </div>
+
+                <h3>
+                    IT Support Specialist
+                </h3>
+
+                <p>
+                    Hardware • Software • Networking
+                </p>
+
+                <br>
+
+                <p>
+                    🛠️ Troubleshooting
+                    <br>
+                    🌐 Network Support
+                    <br>
+                    🔧 Hardware Maintenance
+                    <br>
+                    🛡️ System Security
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     ABOUT
+============================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Professional Computer Technician & IT Support Specialist</p>
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Technology Problem Solver</h3>
+
+                <p>
+                    I am a dedicated Computer Technician and IT Support
+                    Specialist with almost four years of professional
+                    experience providing technical support and maintaining
+                    reliable IT operations.
+                </p>
+
+                <p>
+                    My experience includes computer hardware troubleshooting,
+                    software installation, network monitoring, VPN
+                    troubleshooting, malware scanning, workstation deployment,
+                    and IT documentation.
+                </p>
+
+                <p>
+                    I enjoy solving technical problems and helping users
+                    get the most out of their technology.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info">
+                    <strong>Position</strong>
+                    IT Support Specialist
+                </div>
+
+                <div class="info">
+                    <strong>Specialization</strong>
+                    Computer Technology
+                </div>
+
+                <div class="info">
+                    <strong>Experience</strong>
+                    Almost 4 Years
+                </div>
+
+                <div class="info">
+                    <strong>Location</strong>
+                    Philippines
+                </div>
+
+                <div class="info">
+                    <strong>Focus</strong>
+                    Technical Support
+                </div>
+
+                <div class="info">
+                    <strong>Availability</strong>
+                    Open to Opportunities
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     EXPERIENCE
+============================== -->
+
+<section class="experience" id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Professional Experience</h2>
+            <p>My IT Support experience</p>
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>
+                IT Support Specialist
+            </h3>
+
+            <div class="company">
+                Global Officeworks (GLOW)
+            </div>
+
+            <p>
+                <strong>Experience:</strong> Almost 4 Years
+            </p>
+
+            <br>
+
+            <ul>
+
+                <li>
+                    Provide technical support to employees and users.
+                </li>
+
+                <li>
+                    Diagnose and troubleshoot computer hardware and
+                    software problems.
+                </li>
+
+                <li>
+                    Install, configure, and maintain desktop computers
+                    and laptops.
+                </li>
+
+                <li>
+                    Perform operating system and application installation.
+                </li>
+
+                <li>
+                    Troubleshoot network connectivity and internet issues.
+                </li>
+
+                <li>
+                    Monitor network performance and connectivity.
+                </li>
+
+                <li>
+                    Configure and troubleshoot printers and peripheral
+                    devices.
+                </li>
+
+                <li>
+                    Perform malware scanning and security checks.
+                </li>
+
+                <li>
+                    Troubleshoot VPN and device-related issues.
+                </li>
+
+                <li>
+                    Deploy and configure computers and accessories for
+                    new employees and trainees.
+                </li>
+
+                <li>
+                    Replace and upgrade computer components when necessary.
+                </li>
+
+                <li>
+                    Maintain IT equipment and inventory.
+                </li>
+
+                <li>
+                    Create IT support ticketing reports and documentation.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     SKILLS
+============================== -->
+
+<section class="skills" id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Areas of technical expertise</p>
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🖥️
+                </div>
+
+                <h3>Computer Hardware</h3>
+
+                <p>
+                    PC assembly, hardware diagnostics,
+                    RAM, SSD/HDD, CPU, power supply,
+                    and peripheral troubleshooting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ⚙️
+                </div>
+
+                <h3>Software</h3>
+
+                <p>
+                    Windows installation, software setup,
+                    drivers, system troubleshooting,
+                    and system optimization.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>Networking</h3>
+
+                <p>
+                    LAN, Wi-Fi, internet connectivity,
+                    IP configuration, VPN troubleshooting,
+                    and network monitoring.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🛡️
+                </div>
+
+                <h3>IT Security</h3>
+
+                <p>
+                    Malware scanning, system security,
+                    basic network security, and
+                    security troubleshooting.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     SERVICES
+============================== -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Services</h2>
+            <p>Technical services I can provide</p>
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <div class="icon">🔧</div>
+
+                <h3>Computer Repair</h3>
+
+                <p>
+                    Diagnose and troubleshoot desktop and laptop
+                    hardware and software problems.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🚀</div>
+
+                <h3>PC Upgrade</h3>
+
+                <p>
+                    Upgrade RAM, SSD/HDD, CPU, and other components
+                    to improve computer performance.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">💿</div>
+
+                <h3>Windows Installation</h3>
+
+                <p>
+                    Install and configure Windows operating systems,
+                    drivers, and essential applications.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🌐</div>
+
+                <h3>Network Troubleshooting</h3>
+
+                <p>
+                    Troubleshoot LAN, Wi-Fi, internet, IP,
+                    and basic VPN connectivity problems.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🛡️</div>
+
+                <h3>Malware Troubleshooting</h3>
+
+                <p>
+                    Perform system checks, malware scanning,
+                    and basic security troubleshooting.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">👨‍💻</div>
+
+                <h3>IT Technical Support</h3>
+
+                <p>
+                    Provide technical assistance to users and
+                    employees for everyday IT problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     PROJECTS
+============================== -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Selected Projects</h2>
+
+            <p>
+                Examples of IT support activities
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <h3>
+                    🖥️ Computer Hardware Replacement
+                </h3>
+
+                <p>
+                    Performed hardware replacement and upgrades
+                    for workstations to restore system performance
+                    and reliability.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Hardware Diagnostics
+                    </span>
+
+                    <span class="tag">
+                        CPU Replacement
+                    </span>
+
+                    <span class="tag">
+                        PC Troubleshooting
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    🌐 Network Monitoring
+                </h3>
+
+                <p>
+                    Monitored network connectivity and investigated
+                    network-related issues to help maintain reliable
+                    organizational operations.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Network Troubleshooting
+                    </span>
+
+                    <span class="tag">
+                        Connectivity
+                    </span>
+
+                    <span class="tag">
+                        Monitoring
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    👨‍💻 New Employee Computer Deployment
+                </h3>
+
+                <p>
+                    Prepared and deployed computers and accessories
+                    for new employees and trainees.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Windows Setup
+                    </span>
+
+                    <span class="tag">
+                        Software Installation
+                    </span>
+
+                    <span class="tag">
+                        Network Configuration
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    📊 IT Ticketing & Monthly Reporting
+                </h3>
+
+                <p>
+                    Created and maintained IT support ticketing
+                    reports to document technical issues,
+                    resolutions, and support activities.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        IT Documentation
+                    </span>
+
+                    <span class="tag">
+                        Ticket Management
+                    </span>
+
+                    <span class="tag">
+                        Reporting
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     WORKFLOW
+============================== -->
+
+<section class="workflow">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My IT Support Workflow</h2>
+
+            <p>
+                How I approach technical problems
+            </p>
+
+        </div>
+
+
+        <div class="workflow-grid">
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Identify
+                </h3>
+
+                <p>
+                    Understand the problem.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Diagnose
+                </h3>
+
+                <p>
+                    Investigate the cause.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Troubleshoot
+                </h3>
+
+                <p>
+                    Apply the solution.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Test
+                </h3>
+
+                <p>
+                    Verify the solution.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <h3>
+                    Document
+                </h3>
+
+                <p>
+                    Record the resolution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     STRENGTHS
+============================== -->
+
+<section class="strengths">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Professional Strengths</h2>
+
+            <p>
+                Skills that define my work
+            </p>
+
+        </div>
+
+
+        <div class="strengths-list">
+
+            <div class="strength">
+                ✓ Problem Solving
+            </div>
+
+            <div class="strength">
+                ✓ Technical Troubleshooting
+            </div>
+
+            <div class="strength">
+                ✓ Attention to Detail
+            </div>
+
+            <div class="strength">
+                ✓ Hardware Diagnostics
+            </div>
+
+            <div class="strength">
+                ✓ Customer/User Support
+            </div>
+
+            <div class="strength">
+                ✓ Team Collaboration
+            </div>
+
+            <div class="strength">
+                ✓ Time Management
+            </div>
+
+            <div class="strength">
+                ✓ Continuous Learning
+            </div>
+
+            <div class="strength">
+                ✓ Adaptability
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     CONTACT
+============================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Let's connect and discuss IT opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+
+                    <div class="icon">
+                        📧
+                    </div>
+
+                    <div>
+
+                        <h4>Email</h4>
+
+                        <p>
+                            leocalumba9@gmail.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <h4>Phone</h4>
+
+                        <p>
+                            +63 929 477 3657
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h4>Location</h4>
+
+                        <p>
+                            Philippines
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="icon">
+                        💼
+                    </div>
+
+                    <div>
+
+                        <h4>Professional Role</h4>
+
+                        <p>
+                            Computer Technician / IT Support 
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <p>
+        © <span id="year"></span>
+        Leo G. Calumba.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Computer Technician | IT Support 
+    </p>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn" onclick="scrollToTop()">
+    ↑
+</button>
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+    // Mobile Navigation
+    function toggleMenu() {
+
+        const navLinks = document.getElementById("navLinks");
+
+        navLinks.classList.toggle("active");
+
+    }
+
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+    // Current Year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    // Back To Top Button
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 400) {
+
+            topBtn.style.display = "block";
+
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
+    });
+
+
+    function scrollToTop() {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    // Contact Form
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        alert(
+            "Thank you, " +
+            name +
+            "! Your message form has been submitted."
+        );
+
+        event.target.reset();
+
+    }
+
+</script>
+
+</body>
+</html>
+```
